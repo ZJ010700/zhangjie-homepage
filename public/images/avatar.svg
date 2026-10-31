@@ -1,45 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="张杰的矢量头像">
-  <!-- 底色：墨黑（与站内反色面板、favicon 同一套品牌色） -->
-  <rect width="800" height="1000" fill="#101014"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="张杰的插画头像：坐在电脑前思考的程序员">
+  <!-- 背景 -->
+  <rect width="800" height="1000" fill="#ffffff"/>
 
-  <!-- 内框发丝线 -->
-  <rect x="48" y="48" width="704" height="904" fill="none" stroke="#f2f1ee" stroke-opacity="0.18" stroke-width="2"/>
+  <!-- 背景装饰色块 -->
+  <ellipse cx="420" cy="560" rx="252" ry="292" fill="#e9effc"/>
+  <circle cx="238" cy="468" r="92" fill="#e9effc"/>
+  <circle cx="150" cy="170" r="56" fill="#eef3fd"/>
+  <circle cx="742" cy="758" r="50" fill="#eef3fd"/>
 
-  <!-- 角落十字（印刷对位标记风格） -->
-  <g stroke="#f2f1ee" stroke-opacity="0.45" stroke-width="3" fill="none">
-    <path d="M96 96 v40 M76 116 h40"/>
-    <path d="M704 864 v40 M684 884 h40"/>
+  <!-- 散落装饰：三角形 / 加号 / 圆点 -->
+  <g fill="none" stroke="#262633" stroke-width="2.5" opacity="0.6">
+    <path d="M176 302 L189 325 L163 325 Z"/>
+    <path d="M136 462 L146 480 L126 480 Z"/>
+    <path d="M738 196 L749 216 L727 216 Z"/>
+    <circle cx="96" cy="232" r="9"/>
   </g>
-
-  <!-- 右上装饰：同心圆 -->
-  <g fill="none" stroke="#f2f1ee" stroke-opacity="0.22" stroke-width="2">
-    <circle cx="636" cy="196" r="72"/>
-    <circle cx="636" cy="196" r="44"/>
+  <g fill="none" stroke="#2d81ff" stroke-width="3.5" stroke-linecap="round" opacity="0.8">
+    <path d="M110 340 v20 M100 350 h20"/>
+    <path d="M252 190 v20 M242 200 h20"/>
+    <path d="M740 416 v20 M730 426 h20"/>
+    <circle cx="152" cy="612" r="7"/>
   </g>
-  <circle cx="636" cy="196" r="8" fill="#2d81ff"/>
+  <circle cx="694" cy="664" r="8" fill="#f5a25d"/>
+  <circle cx="128" cy="762" r="6" fill="#2d81ff"/>
+  <circle cx="240" cy="136" r="8" fill="#9cc2ff"/>
 
-  <!-- 左下装饰：斜线组 -->
-  <g stroke="#f2f1ee" stroke-opacity="0.2" stroke-width="3" fill="none">
-    <path d="M96 856 l88 -88"/>
-    <path d="M96 800 l64 -64"/>
-    <path d="M96 744 l40 -40"/>
-  </g>
+  <!-- 思考气泡 -->
+  <circle cx="536" cy="430" r="7" fill="#9cc2ff"/>
+  <circle cx="562" cy="396" r="11" fill="#9cc2ff"/>
+  <circle cx="594" cy="362" r="18" fill="#7fa9f5"/>
+  <circle cx="650" cy="296" r="56" fill="#2d81ff"/>
 
-  <!-- 主字母 Z（几何构成） -->
-  <g fill="#f2f1ee">
-    <rect x="220" y="360" width="360" height="66"/>
-    <rect x="220" y="700" width="360" height="66"/>
-  </g>
-  <line x1="548" y1="436" x2="252" y2="690" stroke="#f2f1ee" stroke-width="88"/>
-
-  <!-- 品牌蓝点（"Z."） -->
-  <circle cx="644" cy="733" r="46" fill="#2d81ff"/>
-
-  <!-- 底部印刷标记行 -->
+  <!-- 对话气泡 -->
   <g>
-    <rect x="220" y="880" width="22" height="22" fill="#f2f1ee"/>
-    <rect x="258" y="880" width="22" height="22" fill="none" stroke="#f2f1ee" stroke-opacity="0.5" stroke-width="2"/>
-    <circle cx="302" cy="891" r="11" fill="#2d81ff"/>
-    <line x1="360" y1="891" x2="580" y2="891" stroke="#f2f1ee" stroke-opacity="0.25" stroke-width="2"/>
+    <path d="M656 548 L646 582 L688 548 Z" fill="#2d81ff"/>
+    <rect x="628" y="468" width="128" height="80" rx="18" fill="#2d81ff"/>
+    <circle cx="666" cy="497" r="11" fill="#ffffff"/>
+    <path d="M648 531 a18 18 0 0 1 36 0 Z" fill="#ffffff"/>
+    <rect x="696" y="490" width="44" height="8" rx="4" fill="#cfe0ff"/>
+    <rect x="696" y="507" width="44" height="8" rx="4" fill="#cfe0ff"/>
+    <rect x="696" y="524" width="30" height="8" rx="4" fill="#cfe0ff"/>
   </g>
+
+  <!-- 盆栽 -->
+  <g>
+    <path d="M168 792 C148 762 130 742 126 716 C154 724 168 748 170 780 Z" fill="#2ba58c"/>
+    <path d="M170 792 C164 744 166 706 178 672 C194 702 192 748 180 792 Z" fill="#3ec9a7"/>
+    <path d="M174 792 C192 762 212 740 224 716 C226 744 206 772 184 796 Z" fill="#3ec9a7"/>
+    <path d="M126 788 L214 788 L206 830 L198 858 L142 858 L134 830 Z" fill="#f5a25d"/>
+    <rect x="118" y="776" width="104" height="20" rx="8" fill="#f7b267"/>
+  </g>
+
+  <!-- 地面阴影与地线 -->
+  <ellipse cx="172" cy="872" rx="72" ry="9" fill="#e9effc"/>
+  <ellipse cx="430" cy="874" rx="118" ry="10" fill="#e9effc"/>
+  <ellipse cx="664" cy="872" rx="96" ry="9" fill="#e9effc"/>
+  <path d="M92 858 H708" stroke="#2d81ff" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- 人物：身体与衣着 -->
+  <path d="M302 858 L302 646 Q302 566 380 556 L468 556 Q546 566 546 646 L546 858 Z" fill="#2d81ff"/>
+  <path d="M386 664 L386 576 Q386 556 406 556 L446 556 Q466 556 466 576 L466 664 Z" fill="#fcd9b8"/>
+  <rect x="386" y="592" width="80" height="13" fill="#f5a25d"/>
+  <rect x="386" y="622" width="80" height="13" fill="#f5a25d"/>
+  <rect x="386" y="652" width="80" height="13" fill="#f5a25d"/>
+  <path d="M398 548 L454 548 L442 578 L410 578 Z" fill="#ffffff"/>
+
+  <!-- 头部 -->
+  <circle cx="352" cy="478" r="13" fill="#f7c39a"/>
+  <circle cx="498" cy="478" r="13" fill="#f7c39a"/>
+  <ellipse cx="425" cy="470" rx="72" ry="80" fill="#f7c39a"/>
+  <path d="M356 452 C354 388 390 364 426 364 C462 364 498 388 496 452 L478 452 C482 416 466 400 426 398 C386 400 370 416 374 452 Z" fill="#262633"/>
+  <rect x="352" y="452" width="12" height="26" fill="#262633"/>
+  <rect x="488" y="452" width="12" height="26" fill="#262633"/>
+  <!-- 眼镜 -->
+  <circle cx="391" cy="478" r="32" fill="#ffffff" fill-opacity="0.45" stroke="#262633" stroke-width="5"/>
+  <circle cx="459" cy="478" r="32" fill="#ffffff" fill-opacity="0.45" stroke="#262633" stroke-width="5"/>
+  <path d="M423 474 Q425 470 427 474" fill="none" stroke="#262633" stroke-width="5"/>
+  <path d="M359 472 L350 475 M491 472 L500 475" stroke="#262633" stroke-width="4" stroke-linecap="round"/>
+  <!-- 鼻子与嘴 -->
+  <path d="M425 500 q5 9 -2 15" fill="none" stroke="#e89a6e" stroke-width="4" stroke-linecap="round"/>
+  <path d="M413 538 q11 8 23 1" fill="none" stroke="#d97b52" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 右臂（搭向桌边，画在笔记本后面） -->
+  <path d="M534 622 C566 662 560 758 546 826" fill="none" stroke="#1f6fd6" stroke-width="44" stroke-linecap="round"/>
+  <ellipse cx="543" cy="840" rx="17" ry="14" fill="#f7c39a"/>
+
+  <!-- 笔记本电脑 -->
+  <rect x="560" y="700" width="190" height="148" rx="12" fill="#d7dbe4"/>
+  <rect x="574" y="714" width="162" height="120" rx="6" fill="#eceef3"/>
+  <circle cx="655" cy="774" r="10" fill="#a8aebc"/>
+  <rect x="546" y="846" width="228" height="14" rx="7" fill="#b8bfcc"/>
+
+  <!-- 思考的手臂与手（在身体前面） -->
+  <path d="M334 838 C316 764 322 694 356 644 C378 610 396 592 408 584" fill="none" stroke="#1f6fd6" stroke-width="44" stroke-linecap="round"/>
+  <ellipse cx="420" cy="566" rx="15" ry="18" fill="#f7c39a"/>
+  <path d="M430 556 L452 508" stroke="#262633" stroke-width="6" stroke-linecap="round"/>
 </svg>

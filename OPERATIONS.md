@@ -121,7 +121,7 @@ personal-homepage\
    ```
 3. 保存刷新。想恢复"首字母占位块"，把这行改成 `avatar: "",` 即可。
 
-> 当前头像是一张程序生成的矢量图 `avatar.svg`（"Z." 字母徽章，与站内配色一致，仅 2KB）。想换回真实照片：把照片命名为 `avatar.png` 放进 `public\images\`，再把上面那行改成 `avatar: "images/avatar.png",`。
+> 当前头像是一张程序生成的矢量插画 `avatar.svg`（坐在电脑前思考的人物插画，仅几 KB）。想换回真实照片：把照片命名为 `avatar.png` 放进 `public\images\`，再把上面那行改成 `avatar: "images/avatar.png",`。
 
 ### 5.2 给项目卡片加配图
 
