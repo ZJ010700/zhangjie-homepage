@@ -114,12 +114,14 @@ personal-homepage\
 
 ### 5.1 添加 / 更换头像
 
-1. 把图片放进 `public\images\` 文件夹，命名为 `avatar.png`（或 jpg/webp 均可，建议宽高 800×1000 左右、大小 < 500KB）
+1. 把图片放进 `public\images\` 文件夹，命名为 `avatar.svg`（或 png/jpg/webp 均可，位图建议宽高 800×1000 左右、比例 4:5、大小 < 500KB）
 2. 打开 `src\data\site.ts`，确认这一行指向你的文件名：
    ```ts
-   avatar: "images/avatar.png",
+   avatar: "images/avatar.svg",
    ```
 3. 保存刷新。想恢复"首字母占位块"，把这行改成 `avatar: "",` 即可。
+
+> 当前头像是一张程序生成的矢量图 `avatar.svg`（"Z." 字母徽章，与站内配色一致，仅 2KB）。想换回真实照片：把照片命名为 `avatar.png` 放进 `public\images\`，再把上面那行改成 `avatar: "images/avatar.png",`。
 
 ### 5.2 给项目卡片加配图
 

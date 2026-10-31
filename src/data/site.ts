@@ -29,7 +29,7 @@ export const SITE = {
   name: "张杰",
   nameEn: "ZHANG JIE",
   /** 头像：public/images/ 下的文件路径；留空 "" 则显示姓名首字母占位块 */
-  avatar: "images/avatar.png",
+  avatar: "images/avatar.svg",
   /** 联系邮箱 ★ 改成你自己的邮箱（会显示在「联系我」区和页脚） */
   email: "your-email@example.com",
   /** GitHub 主页链接 */

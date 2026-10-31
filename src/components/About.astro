@@ -10,7 +10,7 @@ import { SITE, ABOUT, asset } from "../data/site";
     <div class="grid">
       <figure class="portrait card">
         {SITE.avatar ? (
-          <img src={asset(SITE.avatar)} alt={`${SITE.name}的照片`} width="672" height="944" />
+          <img src={asset(SITE.avatar)} alt={`${SITE.name}的头像`} width="672" height="944" />
         ) : (
           <div class="letter">{SITE.name.slice(0, 1)}</div>
         )}
