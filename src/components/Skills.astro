@@ -1,0 +1,103 @@
+---
+import SectionHead from "./SectionHead.astro";
+import { SKILLS } from "../data/site";
+
+// 滚动条内容复制两份实现无缝循环（第二份对屏幕阅读器隐藏）
+const loop = [...SKILLS.marquee, ...SKILLS.marquee];
+---
+
+<section class="section" id="skills">
+  <div class="wrap">
+    <SectionHead no={SKILLS.no} title={SKILLS.title} titleEn={SKILLS.titleEn} />
+  </div>
+
+  <div class="marquee" aria-label="技术关键词">
+    <div class="marquee-track">
+      {loop.map((w, i) => (
+        <span class="item" aria-hidden={i >= SKILLS.marquee.length ? "true" : undefined}>
+          {w}<span class="star">✦</span>
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="groups">
+      {SKILLS.groups.map((g) => (
+        <div class="card group">
+          <h3>{g.name}</h3>
+          <ul>
+            {g.items.map((it) => (
+              <li>{it}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding-inline: 0; /* 让 marquee 通栏 */
+  }
+
+  .section :global(.wrap) {
+    padding-inline: var(--gutter);
+  }
+
+  .marquee .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 0 16px 18px;
+    font-family: var(--font-mono);
+    font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .star {
+    font-size: 0.6em;
+    color: var(--accent);
+  }
+
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: clamp(36px, 5vw, 64px);
+  }
+
+  .group {
+    padding: 24px 26px;
+  }
+
+  .group h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+
+  .group li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .group li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  @media (max-width: 800px) {
+    .groups {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

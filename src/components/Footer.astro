@@ -1,0 +1,94 @@
+---
+import { SITE, NAV } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap grid">
+    <div class="brand">
+      <p class="logo">{SITE.name}<span class="dot">.</span></p>
+      <p class="mono-label tagline">用代码，解决真实的问题。</p>
+    </div>
+
+    <nav class="col" aria-label="页脚导航">
+      <p class="mono-label col-title">导航</p>
+      {NAV.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <div class="col">
+      <p class="mono-label col-title">联系</p>
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      <a href={SITE.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="wrap bottom">
+    <p class="mono-label">© {year} {SITE.name}</p>
+    <p class="mono-label">Made with Astro · 部署于 GitHub Pages</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding-top: clamp(40px, 5vw, 64px);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 32px;
+    padding-bottom: clamp(40px, 5vw, 64px);
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 26px;
+  }
+
+  .dot {
+    color: var(--accent);
+  }
+
+  .tagline {
+    margin-top: 10px;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .col-title {
+    margin-bottom: 6px;
+  }
+
+  .col a {
+    color: var(--muted);
+    font-size: 15px;
+    transition: color 0.2s ease;
+  }
+
+  .col a:hover {
+    color: var(--ink);
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-block: 20px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

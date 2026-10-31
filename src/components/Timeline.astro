@@ -1,0 +1,111 @@
+---
+import SectionHead from "./SectionHead.astro";
+import { TIMELINE } from "../data/site";
+---
+
+<section class="section" id="timeline">
+  <div class="wrap">
+    <SectionHead no={TIMELINE.no} title={TIMELINE.title} titleEn={TIMELINE.titleEn} />
+
+    <ol class="tl">
+      {TIMELINE.items.map((it) => (
+        <li class="row">
+          <span class="year mono-label">{it.year}</span>
+          <div class="body">
+            <h3>
+              {it.title}
+              {it.tag && <span class="tag">{it.tag}</span>}
+            </h3>
+            <p>{it.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="honors">
+      <span class="mono-label honors-label">荣誉 HONORS</span>
+      <ul>
+        {TIMELINE.honors.map((h) => (
+          <li>★ {h}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tl {
+    border-top: 1px solid var(--line);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .year {
+    padding-top: 5px;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(16px, 1.8vw, 19px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent-ink);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-radius: 999px;
+    padding: 2px 10px;
+    white-space: nowrap;
+  }
+
+  .body p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 4px;
+    max-width: 42em;
+  }
+
+  .honors {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  .honors-label {
+    flex-shrink: 0;
+  }
+
+  .honors ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+  }
+
+  .honors li {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+</style>

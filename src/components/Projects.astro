@@ -1,0 +1,192 @@
+---
+import SectionHead from "./SectionHead.astro";
+import { PROJECTS, asset } from "../data/site";
+---
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <SectionHead no={PROJECTS.no} title={PROJECTS.title} titleEn={PROJECTS.titleEn} intro={PROJECTS.intro} />
+
+    <div class="grid">
+      {PROJECTS.items.map((p, i) => (
+        <article class="card project">
+          <div class="media" style={`--ph: ${p.color}`}>
+            {p.image ? (
+              <img src={asset(p.image)} alt={p.name} loading="lazy" />
+            ) : (
+              <div class="ph">
+                <span class="ph-no" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <span class="ph-name">{p.name}</span>
+                <span class="mono-label ph-tag">IMAGE · 待补</span>
+              </div>
+            )}
+          </div>
+
+          <div class="body">
+            <div class="head">
+              <h3>{p.name}</h3>
+              <span class="mono-label">{p.sub}</span>
+            </div>
+
+            <p class="desc">{p.desc}</p>
+
+            {p.award && <p class="award">★ {p.award}</p>}
+
+            <ul class="tech">
+              {p.tech.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+
+            {p.link && (
+              <a href={p.link} target="_blank" rel="noopener noreferrer" class="more">
+                查看项目 →
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .media {
+    aspect-ratio: 16 / 9;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 无图占位块：项目色渐变 + 大号描边编号 */
+  .ph {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 4px;
+    padding: 20px 24px;
+    background:
+      radial-gradient(120% 160% at 85% -20%, color-mix(in srgb, var(--ph) 38%, transparent), transparent 60%),
+      linear-gradient(160deg, color-mix(in srgb, var(--ph) 16%, var(--bg-sunken)), var(--bg-sunken));
+  }
+
+  .ph-no {
+    position: absolute;
+    top: 6px;
+    right: 16px;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(64px, 8vw, 110px);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px color-mix(in srgb, var(--ph) 55%, transparent);
+  }
+
+  .ph {
+    position: relative;
+  }
+
+  .ph-name {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .ph-tag {
+    color: color-mix(in srgb, var(--ink) 55%, transparent);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 24px 24px;
+    flex: 1;
+  }
+
+  .head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .desc {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .award {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+
+  .tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  .tech li {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg-sunken);
+    color: var(--muted);
+  }
+
+  .more {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent-ink);
+    width: fit-content;
+  }
+
+  .more:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

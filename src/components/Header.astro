@@ -1,0 +1,81 @@
+---
+import { SITE, NAV } from "../data/site";
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#top" class="logo">
+      {SITE.name}<span class="dot">.</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      {NAV.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <a href="#contact" class="btn btn-solid cta">联系我</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--header-h);
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .dot {
+    color: var(--accent);
+  }
+
+  .nav {
+    display: flex;
+    gap: clamp(14px, 2.5vw, 28px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav a {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .nav a:hover {
+    color: var(--ink);
+  }
+
+  .cta {
+    padding: 9px 18px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .cta {
+      display: none;
+    }
+  }
+</style>

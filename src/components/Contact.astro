@@ -1,0 +1,77 @@
+---
+import SectionHead from "./SectionHead.astro";
+import { SITE, CONTACT } from "../data/site";
+---
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <SectionHead no={CONTACT.no} title={CONTACT.title} titleEn={CONTACT.titleEn} />
+
+    <div class="panel">
+      <p class="mono-label panel-label">{CONTACT.echo}</p>
+      <h2 class="headline">{CONTACT.headline}</h2>
+      <p class="sub">{CONTACT.sub}</p>
+
+      <div class="ctas">
+        <a href={`mailto:${SITE.email}`} class="btn mail">{SITE.email}</a>
+        <a href={SITE.github} target="_blank" rel="noopener noreferrer" class="btn gh">
+          GitHub ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .panel {
+    background: var(--invert-bg);
+    color: var(--invert-ink);
+    border-radius: calc(var(--radius) + 8px);
+    padding: clamp(36px, 6vw, 80px);
+  }
+
+  .panel-label {
+    color: color-mix(in srgb, var(--invert-ink) 55%, transparent);
+    font-style: italic;
+    font-family: var(--font-serif);
+    text-transform: none;
+    letter-spacing: 0.04em;
+    font-size: 16px;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(30px, 5vw, 60px);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-top: 12px;
+  }
+
+  .sub {
+    margin-top: 16px;
+    max-width: 34em;
+    color: color-mix(in srgb, var(--invert-ink) 62%, transparent);
+  }
+
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 36px;
+  }
+
+  .mail,
+  .gh {
+    border-color: color-mix(in srgb, var(--invert-ink) 30%, transparent);
+    color: var(--invert-ink);
+    background: transparent;
+  }
+
+  .mail:hover,
+  .gh:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+</style>

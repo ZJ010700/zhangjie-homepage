@@ -1,0 +1,110 @@
+---
+import SectionHead from "./SectionHead.astro";
+import { SITE, ABOUT, asset } from "../data/site";
+---
+
+<section class="section" id="about">
+  <div class="wrap">
+    <SectionHead no={ABOUT.no} title={ABOUT.title} titleEn={ABOUT.titleEn} />
+
+    <div class="grid">
+      <figure class="portrait card">
+        {SITE.avatar ? (
+          <img src={asset(SITE.avatar)} alt={`${SITE.name}的照片`} width="672" height="944" />
+        ) : (
+          <div class="letter">{SITE.name.slice(0, 1)}</div>
+        )}
+        <figcaption class="mono-label">{SITE.nameEn} · 2025–2027</figcaption>
+      </figure>
+
+      <div class="text">
+        {ABOUT.paragraphs.map((p) => <p>{p}</p>)}
+
+        <div class="facts">
+          {ABOUT.facts.map((f) => (
+            <div class="fact card">
+              <span class="mono-label">{f.k}</span>
+              <span class="v">{f.v}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 340px) 1fr;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+  }
+
+  .portrait {
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .portrait img,
+  .letter {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: calc(var(--radius) - 6px);
+  }
+
+  .letter {
+    display: grid;
+    place-items: center;
+    background: var(--bg-sunken);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 96px;
+    color: var(--line-strong);
+  }
+
+  .portrait figcaption {
+    padding: 12px 6px 4px;
+  }
+
+  .text p {
+    max-width: 38em;
+    color: var(--ink);
+    font-size: clamp(15px, 1.6vw, 17px);
+  }
+
+  .text p + p {
+    margin-top: 14px;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .fact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px 20px;
+  }
+
+  .fact .v {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .portrait {
+      max-width: 320px;
+    }
+  }
+</style>
