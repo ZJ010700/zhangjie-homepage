@@ -31,7 +31,7 @@ export const SITE = {
   /** 头像：public/images/ 下的文件路径；留空 "" 则显示姓名首字母占位块 */
   avatar: "images/avatar.svg",
   /** 联系邮箱 ★ 改成你自己的邮箱（会显示在「联系我」区和页脚） */
-  email: "your-email@example.com",
+  email: "2447478255@qq.com",
   /** GitHub 主页链接 */
   github: "https://github.com/ZJ010700",
 };
@@ -192,10 +192,10 @@ export const TIMELINE = {
   /** 时间线（按时间顺序，tag = 右侧小标签，没有就留空 ""） */
   items: [
     {
-      year: "—",
+      year: "2022.12",
       title: "携笔从戎",
       desc: "应征入伍，退役大学生士兵。",
-      tag: "",
+      tag: "热血",
     },
     {
       year: "2025.08",
@@ -207,25 +207,25 @@ export const TIMELINE = {
       year: "2026.06",
       title: "数据库课程设计《旅游推荐管理系统》",
       desc: "Spring Boot + Vue 前后端分离平台，完整走完设计、开发与答辩。",
-      tag: "",
+      tag: "筑基",
     },
     {
       year: "2026.07",
       title: "山东省第 26 届运动会 · 志愿服务",
       desc: "柔道、摔跤项目志愿者。",
-      tag: "",
+      tag: "热心",
     },
     {
       year: "2026.08",
       title: "信安竞赛 / 长城杯 · 国赛优胜奖",
       desc: "FreqSpy 团队获第十九届全国大学生信息安全竞赛（作品赛）国赛优胜奖。",
-      tag: "获奖",
+      tag: "拼搏",
     },
     {
       year: "2026.09",
       title: "国家奖学金申报 · AI 方向自学",
       desc: "提交国家奖学金申请材料；部署 OpenMAIC、搭建 vLLM 推理环境。",
-      tag: "",
+      tag: "荣誉",
     },
     {
       year: "2026.10",
